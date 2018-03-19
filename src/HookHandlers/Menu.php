@@ -3,6 +3,7 @@
 namespace RapidWeb\GoogleContactsForWordPress\HookHandlers;
 
 use RapidWeb\GoogleContactsForWordPress\Constants;
+use RapidWeb\GoogleContactsForWordPress\PageHandlers\Dashboard;
 
 class Menu
 {
@@ -21,6 +22,7 @@ class Menu
 
     public function dashboard()
     {
-        echo "hello!";
+        $dashboard = new Dashboard;
+        $dashboard->handleRequest();
     }
 }
