@@ -1,0 +1,5 @@
+{
+    "require": {
+        "rapidwebltd/php-google-people-api": "^1.0"
+    }
+}
