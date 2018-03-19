@@ -1,2 +1,3 @@
-# google-contacts-for-wordpress
-Google Contacts for WordPress
+# Google Contacts for WordPress Plugin
+
+Google Contacts for WordPress Plugin
