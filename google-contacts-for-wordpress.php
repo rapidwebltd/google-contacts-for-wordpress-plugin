@@ -11,4 +11,6 @@ Domain Path: /languages
 
 require_once __DIR__.'/vendor/autoload.php';
 
-require_once __DIR__.'/src/hooks.php';
+use RapidWeb\GoogleContactsForWordPress\GoogleContactsForWordpress;
+
+new GoogleContactsForWordpress;
