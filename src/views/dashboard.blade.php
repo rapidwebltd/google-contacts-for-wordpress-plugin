@@ -5,7 +5,7 @@
 <h2>Dashboard</h2>
 
 @if(!$setupComplete)
-    <p>Google contact for WordPress is not yet setup.</p>
+    <p>Google Contacts for WordPress is not yet setup.</p>
     <p><a href="{{ admin_url('options-general.php?page=gcfw_setup_step_1') }}">Setup</a></p>
 @else
 
