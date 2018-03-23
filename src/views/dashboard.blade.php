@@ -35,13 +35,13 @@
                 </td>
                 <td>{{ $user->data->user_email }}</td>
                 <td>
-                    @if(get_user_meta($user->ID, $USER_META_GOOGLE_CONTACT_RESOURCE_NAME, true))
+                    @if($user->googleContactResourceName)
                         ✅ Synced
                     @else
                         ❌ Not synced
                     @endif
                 </td>
-                <td>{{ get_user_meta($user->ID, $USER_META_GOOGLE_CONTACT_RESOURCE_NAME, true) }}</td>
+                <td>{{ $user->googleContactResourceName }}</td>
             </tr>
         @endforeach
     </table>

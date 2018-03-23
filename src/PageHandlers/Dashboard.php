@@ -20,12 +20,16 @@ class Dashboard
             $setupComplete = false;
         }
 
+        $users = get_users();
+        foreach($users as $user) {
+            $user->googleContactResourceName = get_user_meta($user->ID, Constants::USER_META_GOOGLE_CONTACT_RESOURCE_NAME, true);
+        }
+
         $blade = new Blade(Constants::VIEWS_DIR, Constants::VIEWS_CACHE_DIR);
 
         echo $blade->make('dashboard', [
             'setupComplete' => $setupComplete, 
-            'users' => get_users(), 
-            'USER_META_GOOGLE_CONTACT_RESOURCE_NAME' => Constants::USER_META_GOOGLE_CONTACT_RESOURCE_NAME
+            'users' => $users
             ]);
     }
 
