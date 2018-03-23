@@ -29,7 +29,8 @@ class Dashboard
 
         echo $blade->make('dashboard', [
             'setupComplete' => $setupComplete, 
-            'users' => $users
+            'users' => $users,
+            'td' => Constants::TEXT_DOMAIN
             ]);
     }
 

@@ -1,15 +1,15 @@
 <div class="wrap">
 
-<h1>Google Contacts for WordPress</h1>
+<h1>{{ __('Google Contacts for WordPress', $td) }}</h1>
 
-<h2>Setup Step 3 - Create Google Contacts for existing WordPress Users</h2>
+<h2>{{ __('Setup Step 3 - Create Google Contacts for existing WordPress Users', $td) }}</h2>
 
-<p>The final step is to bulk create Google Contacts from all your existing WordPress users.</p>
+<p>{{ __('The final step is to bulk create Google Contacts from all your existing WordPress users.', $td) }}</p>
 
-<p>You can click the button below to do so. Please be aware, this may take some time if you have many users.</p>
+<p>{{ __('You can click the button below to do so. Please be aware, this may take some time if you have many users.', $td) }}</p>
 
 <form method="POST" action="/wp-admin/admin-post.php">
-    <input type="submit" value="Finish" />
+    <input type="submit" value="{{ __('Finish', $td) }}" />
     <input type="hidden" name="action" value="gcfw_bulk_create_contacts" />
 </form>
 

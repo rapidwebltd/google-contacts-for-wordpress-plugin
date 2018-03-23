@@ -15,7 +15,11 @@ class SetupStep1
 
         $blade = new Blade(Constants::VIEWS_DIR, Constants::VIEWS_CACHE_DIR);
 
-        echo $blade->make('setup-step-1', ['clientId' => $clientId, 'clientSecret' => $clientSecret]);
+        echo $blade->make('setup-step-1', [
+            'clientId' => $clientId, 
+            'clientSecret' => $clientSecret,
+            'td' => Constants::TEXT_DOMAIN
+            ]);
     }
 
     public function post()

@@ -16,7 +16,9 @@ class SetupStep3
     {
         $blade = new Blade(Constants::VIEWS_DIR, Constants::VIEWS_CACHE_DIR);
 
-        echo $blade->make('setup-step-3');
+        echo $blade->make('setup-step-3', [
+            'td' => Constants::TEXT_DOMAIN
+        ]);
     }
 
     public function post()

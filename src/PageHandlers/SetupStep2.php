@@ -29,7 +29,10 @@ class SetupStep2
 
         $blade = new Blade(Constants::VIEWS_DIR, Constants::VIEWS_CACHE_DIR);
 
-        echo $blade->make('setup-step-2', ['authUrl' => $googleOAuth2Handler->authUrl]);
+        echo $blade->make('setup-step-2', [
+            'authUrl' => $googleOAuth2Handler->authUrl,
+            'td' => Constants::TEXT_DOMAIN
+            ]);
     }
 
     public function post()

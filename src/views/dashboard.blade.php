@@ -1,30 +1,30 @@
 <div class="wrap">
 
-<h1>Google Contacts for WordPress</h1>
+<h1>{{ __('Google Contacts for WordPress', $td) }}</h1>
 
-<h2>Dashboard</h2>
+<h2>{{ __('Dashboard', $td) }}</h2>
 
 @if(!$setupComplete)
-    <p>Google Contacts for WordPress is not yet setup.</p>
-    <p><a href="{{ admin_url('options-general.php?page=gcfw_setup_step_1') }}">Setup</a></p>
+    <p>{{ __('Google Contacts for WordPress is not yet setup.', $td) }}</p>
+    <p><a href="{{ admin_url('options-general.php?page=gcfw_setup_step_1') }}">{{ __('Setup', $td) }}</a></p>
 @else
 
-    <h3>Options</h3>
+    <h3>{{ __('Options', $td) }}</h3>
 
     <p>
-        <a href="{{ admin_url('options-general.php?page=gcfw_setup_step_1') }}">Re-run Setup</a>
+        <a href="{{ admin_url('options-general.php?page=gcfw_setup_step_1') }}">{{ __('Re-run Setup', $td) }}</a>
         | 
-        <a href="{{ admin_url('options-general.php?page=gcfw_setup_step_2') }}">Change linked Google Account</a>
+        <a href="{{ admin_url('options-general.php?page=gcfw_setup_step_2') }}">{{ __('Change linked Google Account', $td) }}</a>
     </p>
 
-    <h3>WordPress users</h3>
+    <h3>{{ __('WordPress users', $td) }}</h3>
 
     <table class="wp-list-table widefat fixed striped">
         <tr>
-            <th>Username</th>
-            <th>Email address</th>
-            <th>Status</th>
-            <th>Google Contacts Resource Name</th>
+            <th>{{ __('Username', $td) }}</th>
+            <th>{{ __('Email address') }}</th>
+            <th>{{ __('Status', $td) }}</th>
+            <th>{{ __('Google Contacts Resource Name', $td) }}</th>
         </tr>
         @foreach($users as $user)
             <tr>
@@ -36,9 +36,9 @@
                 <td>{{ $user->data->user_email }}</td>
                 <td>
                     @if($user->googleContactResourceName)
-                        ✅ Synced
+                        {{ __('✅ Synced', $td) }}
                     @else
-                        ❌ Not synced
+                        {{ __('❌ Not synced', $td) }}
                     @endif
                 </td>
                 <td>{{ $user->googleContactResourceName }}</td>

@@ -1,19 +1,19 @@
 <div class="wrap">
 
-<h1>Google Contacts for WordPress</h1>
+<h1>{{ __('Google Contacts for WordPress', $td) }}</h1>
 
-<h2>Setup Step 2 - Link Google Account</h2>
+<h2>{{ __('Setup Step 2 - Link Google Account', $td) }}</h2>
 
-<p>To link your Google account with this plugin, please click the link below.</p>
-<p>You should sign in with the Google account you wish to store the Google Contacts in.</p>
+<p>{{ __('To link your Google account with this plugin, please click the link below.', $td) }}</p>
+<p>{{ __('You should sign in with the Google account you wish to store the Google Contacts in.', $td) }}</p>
 
 <p><a target="_blank" rel="noopener noreferrer" href="{{ $authUrl }}">{{ $authUrl }}</a></p>
 
-<p>When done, enter the provided auth code below.</p>
+<p>{{ __('When done, enter the provided auth code below.', $td) }}</p>
 
 <form method="POST" action="/wp-admin/admin-post.php">
-    <p>Auth Code: <input name="auth_code" value=""/></p>
-    <input type="submit" value="Next >" />
+    <p>{{ __('Auth Code:', $td) }} <input name="auth_code" value=""/></p>
+    <input type="submit" value="{{ __('Next', $td) }} >" />
     <input type="hidden" name="action" value="gcfw_update_refresh_token" />
 </form>
 

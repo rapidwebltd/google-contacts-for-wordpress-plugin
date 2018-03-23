@@ -22,9 +22,9 @@ class Menu
                       'manage_options', 
                       'gcfw_dashboard', [$this, 'dashboard']);
 
-        add_submenu_page(null, __('Setup 1'), __('Setup 1'), 'manage_options', 'gcfw_setup_step_1', [$this, 'setupStep1']);
-        add_submenu_page(null, __('Setup 2'), __('Setup 2'), 'manage_options', 'gcfw_setup_step_2', [$this, 'setupStep2']);
-        add_submenu_page(null, __('Setup 3'), __('Setup 3'), 'manage_options', 'gcfw_setup_step_3', [$this, 'setupStep3']);
+        add_submenu_page(null, __('Setup 1', Constants::TEXT_DOMAIN), __('Setup 1', Constants::TEXT_DOMAIN), 'manage_options', 'gcfw_setup_step_1', [$this, 'setupStep1']);
+        add_submenu_page(null, __('Setup 2', Constants::TEXT_DOMAIN), __('Setup 2', Constants::TEXT_DOMAIN), 'manage_options', 'gcfw_setup_step_2', [$this, 'setupStep2']);
+        add_submenu_page(null, __('Setup 3', Constants::TEXT_DOMAIN), __('Setup 3', Constants::TEXT_DOMAIN), 'manage_options', 'gcfw_setup_step_3', [$this, 'setupStep3']);
     }
 
     public function dashboard()
