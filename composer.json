@@ -1,7 +1,8 @@
 {
     "require": {
+        "jenssegers/blade": "^1.1",
         "rapidwebltd/php-google-people-api": "^1.0",
-        "jenssegers/blade": "^1.1"
+        "rapidwebltd/php-google-oauth-2-handler": "^1.2"
     },
     "autoload": {
         "psr-4": {

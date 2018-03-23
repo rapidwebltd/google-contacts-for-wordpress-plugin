@@ -4,6 +4,9 @@ namespace RapidWeb\GoogleContactsForWordPress\HookHandlers;
 
 use RapidWeb\GoogleContactsForWordPress\Constants;
 use RapidWeb\GoogleContactsForWordPress\PageHandlers\Dashboard;
+use RapidWeb\GoogleContactsForWordPress\PageHandlers\SetupStep1;
+use RapidWeb\GoogleContactsForWordPress\PageHandlers\SetupStep2;
+use RapidWeb\GoogleContactsForWordPress\PageHandlers\SetupStep3;
 
 class Menu
 {
@@ -18,11 +21,29 @@ class Menu
                       __('Google Contacts for WordPress', Constants::TEXT_DOMAIN),
                       'manage_options', 
                       'gcfw_dashboard', [$this, 'dashboard']);
+
+        add_submenu_page(null, __('Setup 1'), __('Setup 1'), 'manage_options', 'gcfw_setup_step_1', [$this, 'setupStep1']);
+        add_submenu_page(null, __('Setup 2'), __('Setup 2'), 'manage_options', 'gcfw_setup_step_2', [$this, 'setupStep2']);
+        add_submenu_page(null, __('Setup 3'), __('Setup 3'), 'manage_options', 'gcfw_setup_step_3', [$this, 'setupStep3']);
     }
 
     public function dashboard()
     {
-        $dashboard = new Dashboard;
-        $dashboard->handleRequest();
+        (new Dashboard)->get();
+    }
+
+    public function setupStep1()
+    {
+        (new SetupStep1)->get();
+    }
+
+    public function setupStep2()
+    {
+        (new SetupStep2)->get();
+    }
+
+    public function setupStep3()
+    {
+        (new SetupStep3)->get();
     }
 }
