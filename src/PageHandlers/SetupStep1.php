@@ -2,9 +2,8 @@
 
 namespace RapidWeb\GoogleContactsForWordPress\PageHandlers;
 
-use RapidWeb\GoogleContactsForWordPress\Constants;
 use Jenssegers\Blade\Blade;
-
+use RapidWeb\GoogleContactsForWordPress\Constants;
 
 class SetupStep1
 {
@@ -16,15 +15,15 @@ class SetupStep1
         $blade = new Blade(Constants::VIEWS_DIR, Constants::VIEWS_CACHE_DIR);
 
         echo $blade->make('setup-step-1', [
-            'clientId' => $clientId, 
+            'clientId'     => $clientId,
             'clientSecret' => $clientSecret,
-            'td' => Constants::TEXT_DOMAIN
+            'td'           => Constants::TEXT_DOMAIN,
             ]);
     }
 
     public function post()
     {
-        switch($_POST['action']) {
+        switch ($_POST['action']) {
 
             case 'gcfw_update_client_id_and_secret':
                 update_option(Constants::OPTION_CLIENT_ID, trim($_POST['client_id']));

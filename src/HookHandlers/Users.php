@@ -4,7 +4,6 @@ namespace RapidWeb\GoogleContactsForWordPress\HookHandlers;
 
 use RapidWeb\GoogleContactsForWordPress\WordPressToGoogleContacts;
 
-
 class Users
 {
     public function __construct()
@@ -28,5 +27,4 @@ class Users
     {
         (new WordPressToGoogleContacts())->deleteContact($id);
     }
-
 }

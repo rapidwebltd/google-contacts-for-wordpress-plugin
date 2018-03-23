@@ -17,9 +17,9 @@ class Menu
 
     public function buildMenu()
     {
-        add_options_page( __('Google Contacts for WordPress', Constants::TEXT_DOMAIN), 
+        add_options_page(__('Google Contacts for WordPress', Constants::TEXT_DOMAIN),
                       __('Google Contacts for WordPress', Constants::TEXT_DOMAIN),
-                      'manage_options', 
+                      'manage_options',
                       'gcfw_dashboard', [$this, 'dashboard']);
 
         add_submenu_page(null, __('Setup 1', Constants::TEXT_DOMAIN), __('Setup 1', Constants::TEXT_DOMAIN), 'manage_options', 'gcfw_setup_step_1', [$this, 'setupStep1']);
@@ -29,21 +29,21 @@ class Menu
 
     public function dashboard()
     {
-        (new Dashboard)->get();
+        (new Dashboard())->get();
     }
 
     public function setupStep1()
     {
-        (new SetupStep1)->get();
+        (new SetupStep1())->get();
     }
 
     public function setupStep2()
     {
-        (new SetupStep2)->get();
+        (new SetupStep2())->get();
     }
 
     public function setupStep3()
     {
-        (new SetupStep3)->get();
+        (new SetupStep3())->get();
     }
 }

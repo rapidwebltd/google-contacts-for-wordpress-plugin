@@ -9,13 +9,11 @@ use RapidWeb\GoogleContactsForWordPress\HookHandlers\Users;
 
 class GoogleContactsForWordpress
 {
-
     public function __construct()
     {
-        new Languages;
-        new Menu;
-        new Posts;
-        new Users;
+        new Languages();
+        new Menu();
+        new Posts();
+        new Users();
     }
-
 }

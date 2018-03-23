@@ -2,9 +2,8 @@
 
 namespace RapidWeb\GoogleContactsForWordPress\PageHandlers;
 
-use RapidWeb\GoogleContactsForWordPress\Constants;
 use Jenssegers\Blade\Blade;
-
+use RapidWeb\GoogleContactsForWordPress\Constants;
 
 class Dashboard
 {
@@ -21,21 +20,20 @@ class Dashboard
         }
 
         $users = get_users();
-        foreach($users as $user) {
+        foreach ($users as $user) {
             $user->googleContactResourceName = get_user_meta($user->ID, Constants::USER_META_GOOGLE_CONTACT_RESOURCE_NAME, true);
         }
 
         $blade = new Blade(Constants::VIEWS_DIR, Constants::VIEWS_CACHE_DIR);
 
         echo $blade->make('dashboard', [
-            'setupComplete' => $setupComplete, 
-            'users' => $users,
-            'td' => Constants::TEXT_DOMAIN
+            'setupComplete' => $setupComplete,
+            'users'         => $users,
+            'td'            => Constants::TEXT_DOMAIN,
             ]);
     }
 
     public function post()
     {
-        
     }
 }
