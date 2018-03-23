@@ -2,7 +2,6 @@
 
 namespace RapidWeb\GoogleContactsForWordPress\HookHandlers;
 
-use RapidWeb\GoogleContactsForWordPress\Constants;
 use RapidWeb\GoogleContactsForWordPress\PageHandlers\SetupStep1;
 use RapidWeb\GoogleContactsForWordPress\PageHandlers\SetupStep2;
 use RapidWeb\GoogleContactsForWordPress\PageHandlers\SetupStep3;
@@ -18,16 +17,16 @@ class Posts
 
     public function setupStep1()
     {
-        (new SetupStep1)->post();
+        (new SetupStep1())->post();
     }
 
     public function setupStep2()
     {
-        (new SetupStep2)->post();
+        (new SetupStep2())->post();
     }
 
     public function setupStep3()
     {
-        (new SetupStep3)->post();
+        (new SetupStep3())->post();
     }
 }

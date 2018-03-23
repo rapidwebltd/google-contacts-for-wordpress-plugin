@@ -2,10 +2,9 @@
 
 namespace RapidWeb\GoogleContactsForWordPress\PageHandlers;
 
-use RapidWeb\GoogleContactsForWordPress\Constants;
 use Jenssegers\Blade\Blade;
+use RapidWeb\GoogleContactsForWordPress\Constants;
 use RapidWeb\GoogleOAuth2Handler\GoogleOAuth2Handler;
-
 
 class SetupStep2
 {
@@ -31,16 +30,16 @@ class SetupStep2
 
         echo $blade->make('setup-step-2', [
             'authUrl' => $googleOAuth2Handler->authUrl,
-            'td' => Constants::TEXT_DOMAIN
+            'td'      => Constants::TEXT_DOMAIN,
             ]);
     }
 
     public function post()
     {
-        switch($_POST['action']) {
+        switch ($_POST['action']) {
 
             case 'gcfw_update_refresh_token':
-            
+
                 $googleOAuth2Handler = $this->getGoogleOAuth2Handler();
                 $refreshToken = $googleOAuth2Handler->getRefreshToken($_POST['auth_code']);
 

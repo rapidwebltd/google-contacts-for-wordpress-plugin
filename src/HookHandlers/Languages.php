@@ -4,7 +4,6 @@ namespace RapidWeb\GoogleContactsForWordPress\HookHandlers;
 
 use RapidWeb\GoogleContactsForWordPress\Constants;
 
-
 class Languages
 {
     public function __construct()
@@ -14,6 +13,6 @@ class Languages
 
     public function loadPluginTextDomain()
     {
-        load_plugin_textdomain(Constants::TEXT_DOMAIN, false, __DIR__.'/../../languages/' );
+        load_plugin_textdomain(Constants::TEXT_DOMAIN, false, __DIR__.'/../../languages/');
     }
 }

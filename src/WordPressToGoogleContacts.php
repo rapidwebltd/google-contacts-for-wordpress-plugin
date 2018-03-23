@@ -2,10 +2,9 @@
 
 namespace RapidWeb\GoogleContactsForWordPress;
 
-use RapidWeb\GooglePeopleAPI\GooglePeople;
-use RapidWeb\GooglePeopleAPI\Contact;
 use RapidWeb\GoogleOAuth2Handler\GoogleOAuth2Handler;
-
+use RapidWeb\GooglePeopleAPI\Contact;
+use RapidWeb\GooglePeopleAPI\GooglePeople;
 
 class WordPressToGoogleContacts
 {
@@ -13,7 +12,7 @@ class WordPressToGoogleContacts
 
     public function __construct()
     {
-         $this->people = new GooglePeople($this->getGoogleOAuth2Handler());
+        $this->people = new GooglePeople($this->getGoogleOAuth2Handler());
     }
 
     private function getGoogleOAuth2Handler()
@@ -38,12 +37,10 @@ class WordPressToGoogleContacts
         $googleContactResourceName = get_user_meta($user->ID, Constants::USER_META_GOOGLE_CONTACT_RESOURCE_NAME, true);
 
         if ($googleContactResourceName) {
-
             try {
                 // Try to get existing Google Contact based on the resource name we have stored.
                 $contact = $this->people->get($googleContactResourceName);
             } catch (\Exception $e) {
-
                 $details = json_decode($e->getMessage());
 
                 // If there is no Google Contact with the resource name we have stored,
@@ -73,7 +70,7 @@ class WordPressToGoogleContacts
             $contact->emailAddresses[0] = new \stdClass();
         }
         $contact->emailAddresses[0]->value = $user->data->user_email;
-        
+
         $contact->save();
 
         update_user_meta($user->ID, Constants::USER_META_GOOGLE_CONTACT_RESOURCE_NAME, $contact->resourceName);
@@ -92,7 +89,6 @@ class WordPressToGoogleContacts
                 // Try to get existing Google Contact based on the resource name we have stored.
                 $contact = $this->people->get($googleContactResourceName);
             } catch (\Exception $e) {
-
                 $details = json_decode($e->getMessage());
 
                 // If there is no Google Contact with the resource name we have stored,
@@ -107,5 +103,4 @@ class WordPressToGoogleContacts
 
         $contact->delete();
     }
-
 }
