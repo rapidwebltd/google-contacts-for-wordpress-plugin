@@ -9,6 +9,14 @@
     <p><a href="{{ admin_url('options-general.php?page=gcfw_setup_step_1') }}">Setup</a></p>
 @else
 
+    <h3>Options</h3>
+
+    <p>
+        <a href="{{ admin_url('options-general.php?page=gcfw_setup_step_1') }}">Re-run Setup</a>
+        | 
+        <a href="{{ admin_url('options-general.php?page=gcfw_setup_step_2') }}">Change linked Google Account</a>
+    </p>
+
     <h3>WordPress users</h3>
 
     <table class="wp-list-table widefat fixed striped">
