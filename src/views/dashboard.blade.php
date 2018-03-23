@@ -24,7 +24,7 @@
             <th>{{ __('Username', $td) }}</th>
             <th>{{ __('Email address') }}</th>
             <th>{{ __('Status', $td) }}</th>
-            <th>{{ __('Google Contacts Resource Name', $td) }}</th>
+            <th>{{ __('Google Contact Resource Name', $td) }}</th>
         </tr>
         @foreach($users as $user)
             <tr>
