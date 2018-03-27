@@ -15,9 +15,18 @@
 <p>{{ __('When done, enter the Client ID and Client Secret below.', $td) }}</p>
 
 <form method="POST" action="/wp-admin/admin-post.php">
-    <p>{{ __('Client ID:', $td) }} <input name="client_id" value="{{ $clientId }}"/></p>
-    <p>{{ __('Client Secret:', $td) }} <input name="client_secret" value="{{ $clientSecret }}"/></p>
-    <input type="submit" value="{{ __('Next >', $td) }}" />
+	<table>
+		<tr>
+			<td>{{ __('Client ID:', $td) }} </td>
+			<td><input name="client_id" class="regular-text" value="{{ $clientId }}"/></td>
+		</tr>
+		<tr>
+			<td>{{ __('Client Secret:', $td) }}</td>
+			<td><input name="client_secret" class="regular-text" value="{{ $clientSecret }}"/></td>
+		</tr>
+	</table>
+	<br>
+    <input type="submit" class="button-secondary" value="{{ __('Next step', $td) }}" />
     <input type="hidden" name="action" value="gcfw_update_client_id_and_secret" />
 </form>
 

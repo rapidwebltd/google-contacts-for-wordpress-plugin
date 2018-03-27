@@ -6,7 +6,7 @@
 
 @if(!$setupComplete)
     <p>{{ __('Google Contacts for WordPress is not yet setup.', $td) }}</p>
-    <p><a href="{{ admin_url('options-general.php?page=gcfw_setup_step_1') }}">{{ __('Setup', $td) }}</a></p>
+    <p><a class="button-primary" href="{{ admin_url('options-general.php?page=gcfw_setup_step_1') }}">{{ __('Setup', $td) }}</a></p>
 @else
 
     <h3>{{ __('Options', $td) }}</h3>

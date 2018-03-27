@@ -9,7 +9,7 @@
 <p>{{ __('You can click the button below to do so. Please be aware, this may take some time if you have many users.', $td) }}</p>
 
 <form method="POST" action="/wp-admin/admin-post.php">
-    <input type="submit" value="{{ __('Finish', $td) }}" />
+    <input type="submit" class="button-primary" value="{{ __('Finish', $td) }}" />
     <input type="hidden" name="action" value="gcfw_bulk_create_contacts" />
 </form>
 

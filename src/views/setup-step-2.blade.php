@@ -12,8 +12,14 @@
 <p>{{ __('When done, enter the provided auth code below.', $td) }}</p>
 
 <form method="POST" action="/wp-admin/admin-post.php">
-    <p>{{ __('Auth Code:', $td) }} <input name="auth_code" value=""/></p>
-    <input type="submit" value="{{ __('Next', $td) }} >" />
+	<table>
+		<tr>
+			<td>{{ __('Auth Code:', $td) }}</td>
+			<td><input class="regular-text" name="auth_code" value=""/></td>
+		</tr>
+	</table>
+    <br>
+    <input type="submit" class="button-secondary" value="{{ __('Next', $td) }} >" />
     <input type="hidden" name="action" value="gcfw_update_refresh_token" />
 </form>
 
