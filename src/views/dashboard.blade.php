@@ -24,6 +24,7 @@
             <th>{{ __('Username', $td) }}</th>
             <th>{{ __('Email address') }}</th>
             <th>{{ __('Status', $td) }}</th>
+            <th>{{ __('Last synced at', $td) }}
             <th>{{ __('Google Contact Resource Name', $td) }}</th>
         </tr>
         @foreach($users as $user)
@@ -41,6 +42,7 @@
                         {{ __('❌ Not synced', $td) }}
                     @endif
                 </td>
+                <td>{{ date(get_option('time_format').', '.get_option('date_format'), $user->googleContactSyncedAt) }}</td>
                 <td>{{ $user->googleContactResourceName }}</td>
             </tr>
         @endforeach

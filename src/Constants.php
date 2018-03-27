@@ -11,4 +11,5 @@ abstract class Constants
     const OPTION_CLIENT_SECRET = 'gcfw_client_secret';
     const OPTION_REFRESH_TOKEN = 'gcfw_refresh_token';
     const USER_META_GOOGLE_CONTACT_RESOURCE_NAME = 'gcfw_google_contact_resource_name';
+    const USER_META_GOOGLE_CONTACT_SYNCED_AT = 'gcfw_google_contact_synced_at';
 }

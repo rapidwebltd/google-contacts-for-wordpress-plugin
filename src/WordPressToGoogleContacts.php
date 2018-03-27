@@ -74,6 +74,7 @@ class WordPressToGoogleContacts
         $contact->save();
 
         update_user_meta($user->ID, Constants::USER_META_GOOGLE_CONTACT_RESOURCE_NAME, $contact->resourceName);
+        update_user_meta($user->ID, Constants::USER_META_GOOGLE_CONTACT_SYNCED_AT, time());
 
         return $contact;
     }
